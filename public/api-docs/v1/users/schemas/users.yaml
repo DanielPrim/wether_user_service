@@ -1,0 +1,76 @@
+Users:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор user
+      example: 0
+    name:
+      type: string
+      description: user name
+      example: "Dante"
+    email:
+      type: string
+      description: user email
+      example: "exsample@mail.com"
+    phone_number:
+      type: string
+      description: user number
+      example: "+7 800 235 35 55"
+    region:
+      type: string
+      description: user region
+      example: "Moscow"
+    updated_at:
+      description: "Дата обновления"
+      format: date-time
+      type: string
+      example: "2024-01-01T11:57:28.000000Z"
+    created_at:
+      description: "Дата обновления"
+      format: date-time
+      type: string
+      example: "2024-01-01T11:57:28.000000Z"
+  required:
+    - id
+    - name
+    - email
+    - phone_number
+    - region
+    - updated_at
+    - created_at
+
+NewsResponse:
+  type: object
+  properties:
+    data:
+      $ref: '#/Users'
+    meta:
+      type: object
+  required:
+    - data
+
+CreateNewsRequest:
+  type: object
+  properties:
+    name:
+      type: string
+      description: user name
+      example: "Dante"
+    email:
+      type: string
+      description: user email
+      example: "exsample@mail.com"
+    phone_number:
+      type: string
+      description: user number
+      example: "+7 800 235 35 55"
+    region:
+      type: string
+      description: user region
+      example: "Moscow"
+  required:
+    - name
+    - email
+    - phone_number
+    - region
